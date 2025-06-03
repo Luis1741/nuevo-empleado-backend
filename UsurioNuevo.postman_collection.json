@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "0cb8bd12-2dd9-4f88-a8b6-a294c92d7a12",
+		"name": "UsurioNuevo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7227696"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/api/usuarios/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Loco Loquero\",\n  \"correo\": \"loco@colaborador.com\",\n  \"area\": \"Recursos Humanos\",\n  \"rol\": \"Analista\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/usuarios/crear"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Nuevo Nombre\",\n    \"correo\":\"nuevo@email.com\",\n    \"estado\":\"aprobado\",\n    \"area\":\"area\",\n    \"rol\":\"rol\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/usuarios/actualizar/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3001/api/usuarios/eliminar/1"
+					},
+					"response": []
+				},
+				{
+					"name": "cambiar-estado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estado\": \"aprobado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/usuarios/cambiar-estado/1"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar-activo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"activo\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/usuarios/actualizar-activo/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "solicitud-accesos",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/api/solicitud-accesos/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Base de Datos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/solicitud-accesos/crear"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"Nuevo acceso\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/solicitud-accesos/actualizar/6"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3001/api/solicitud-accesos/eliminar/6"
+					},
+					"response": []
+				},
+				{
+					"name": "crear-solicitud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usuarioId\": 1,\n  \"accesos\": [2, 3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/solicitud-accesos/crear-solicitud"
+					},
+					"response": []
+				},
+				{
+					"name": "listar-solicitud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/api/solicitud-accesos/listar-solicitud"
+					},
+					"response": []
+				},
+				{
+					"name": "cambiar-estado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estado\": \"rechazado\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/solicitud-accesos/cambiar-estado/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "asignacion-computadores",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/api/asignacion-computadores/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"nombre\",\n    \"numeroSerie\":\"numeroSerie\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/asignacion-computadores/crear"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\":\"mac\",\n    \"numeroSerie\":\"mac-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/asignacion-computadores/actualizar/13"
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"usuarioId\": 1,\n  \"computadorId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3001/api/asignacion-computadores/asignar"
+					},
+					"response": []
+				},
+				{
+					"name": "Historial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3001/api/asignacion-computadores/historial"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3001/api/asignacion-computadores/eliminar/13"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
