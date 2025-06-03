@@ -37,10 +37,7 @@ Para ejecutar la aplicación, sigue estos pasos:
 
 9. Se está usando sequelize, al correr la aplicación se creara la base de datos con sus respectivas tablas y datos de pruebas por medio de los seed.
 
-10. En caso de algún inconveniente con la creación ejecuta este comando en tu cliente de base  de datos, probablemente se deba a que no se ha creado el  esquema de base de datos:
-    ```bash
-   psql -U TU_USUARO -d TU_BASE_DE_DATOS -h localhost -p 5432 -c "CREATE SCHEMA IF NOT EXISTS ingresos;"  
-    ```  
+10. En caso de algún inconveniente con la creación ejecuta este comando en tu cliente de base  de datos, probablemente se deba a que no se ha creado el  esquema de base de datos: psql -U TU_USUARO -d TU_BASE_DE_DATOS -h localhost -p 5432 -c "CREATE SCHEMA IF NOT EXISTS ingresos;"  
 
 11. En la raíz encontraras un colección de postman con los cuales podrás probar.
 
