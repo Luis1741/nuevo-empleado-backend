@@ -1,7 +1,7 @@
-import { DataTypes, Model } from "sequelize";
-import sequelize from "../config/db";
-import { Usuario } from "./Usuario";
-import { Computador } from "./Computador";
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config/db';
+import { Usuario } from './Usuario';
+import { Computador } from './Computador';
 
 export class Asignacion extends Model {
   public id!: number;
@@ -10,40 +10,43 @@ export class Asignacion extends Model {
   public fechaEntrega!: Date;
 }
 
-Asignacion.init({
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  usuarioId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Usuario,
-      key: "id",
+Asignacion.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
     },
-  },
-  computadorId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: Computador,
-      key: "id",
+    usuarioId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: Usuario,
+        key: 'id'
+      }
     },
+    computadorId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: Computador,
+        key: 'id'
+      }
+    },
+    fechaEntrega: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    }
   },
-  fechaEntrega: {
-    type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW,
-  },
-}, {
-  sequelize,
-  modelName: "AsignacionComputador",
-  tableName: "Asignaciones",
-  timestamps: false,
-});
+  {
+    sequelize,
+    modelName: 'AsignacionComputador',
+    tableName: 'Asignaciones',
+    timestamps: false
+  }
+);
 
-Usuario.hasMany(Asignacion, { foreignKey: "usuarioId", onDelete: "CASCADE" });
-Computador.hasMany(Asignacion, { foreignKey: "computadorId", onDelete: "CASCADE" });
-Asignacion.belongsTo(Usuario, { foreignKey: "usuarioId", onDelete: "CASCADE" });
-Asignacion.belongsTo(Computador, { foreignKey: "computadorId", onDelete: "CASCADE" });
+Usuario.hasMany(Asignacion, { foreignKey: 'usuarioId', onDelete: 'CASCADE' });
+Computador.hasMany(Asignacion, { foreignKey: 'computadorId', onDelete: 'CASCADE' });
+Asignacion.belongsTo(Usuario, { foreignKey: 'usuarioId', onDelete: 'CASCADE' });
+Asignacion.belongsTo(Computador, { foreignKey: 'computadorId', onDelete: 'CASCADE' });

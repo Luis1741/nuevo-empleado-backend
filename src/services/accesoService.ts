@@ -2,7 +2,6 @@ import { SolicitudAcceso } from '../models/SolicitudAcceso';
 import { Acceso } from '../models/Acceso';
 import { Usuario } from '../models/Usuario';
 
-
 export const crearAccesos = async (data: any) => {
   return Acceso.create(data);
 };
@@ -29,19 +28,21 @@ export const eliminarAccesos = async (id: number) => {
 export const crearSolicitudAcceso = async (usuarioId: number, accesos: number[]) => {
   const usuario = await Usuario.findByPk(usuarioId);
   if (!usuario) return null;
-  const solicitudes = await Promise.all(accesos.map(async (accesoId: number) => {
-    return await SolicitudAcceso.create({
-      usuarioId,
-      accesoId,
-      estado: 'pendiente'
-    });
-  }));
+  const solicitudes = await Promise.all(
+    accesos.map(async (accesoId: number) => {
+      return await SolicitudAcceso.create({
+        usuarioId,
+        accesoId,
+        estado: 'pendiente'
+      });
+    })
+  );
   return solicitudes;
 };
 
 export const listarSolicitudAcceso = async () => {
   return SolicitudAcceso.findAll({
-    include: [Usuario, Acceso],
+    include: [Usuario, Acceso]
   });
 };
 

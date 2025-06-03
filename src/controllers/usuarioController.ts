@@ -61,7 +61,6 @@ export const actualizarActivoUsuario = async (req: Request, res: Response) => {
 export const cambiarEstado = async (req: Request, res: Response) => {
   try {
     const usuario = await usuarioService.cambiarEstado(Number(req.params.id), req.body.estado);
-    console.log("🚀 ~ cambiarEstado ~ req.body.estado:", req.body.estado)
     if (!usuario) {
       res.status(404).json({ error: 'Usuario no encontrado' });
     } else {

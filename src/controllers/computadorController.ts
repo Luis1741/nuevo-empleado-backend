@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
-import * as computadorService from "../services/computadorService";
+import { Request, Response } from 'express';
+import * as computadorService from '../services/computadorService';
 
 export const crearComputador = async (req: Request, res: Response) => {
   try {
     const nuevoComputador = await computadorService.crearComputador(req.body);
     res.status(201).json(nuevoComputador);
   } catch (error) {
-    res.status(500).json({ error: "Error al crear computadora", details: error });
+    res.status(500).json({ error: 'Error al crear computadora', details: error });
   }
 };
 
@@ -46,9 +46,9 @@ export const asignarComputador = async (req: Request, res: Response) => {
   const asignacion = await computadorService.asignarComputador(usuarioId, computadorId);
 
   if (!asignacion) {
-    res.status(400).json({ error: "Computador no disponible" });
+    res.status(400).json({ error: 'Computador no disponible' });
   } else {
-    res.status(201).json({ message: "Computador asignado", asignacion });
+    res.status(201).json({ message: 'Computador asignado', asignacion });
   }
 };
 

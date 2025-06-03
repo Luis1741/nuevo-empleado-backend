@@ -1,11 +1,10 @@
-import { Computador } from "../models/Computador";
-import { Asignacion } from "../models/AsignacionComputador";
-import { Usuario } from "../models/Usuario";
+import { Computador } from '../models/Computador';
+import { Asignacion } from '../models/AsignacionComputador';
+import { Usuario } from '../models/Usuario';
 
 export const crearComputador = async (data: any) => {
   return Computador.create(data);
 };
-
 
 export const listarComputadores = async () => {
   return Computador.findAll({ where: { disponible: true } });
@@ -39,6 +38,6 @@ export const asignarComputador = async (usuarioId: number, computadorId: number)
 
 export const historialAsignaciones = async () => {
   return Asignacion.findAll({
-    include: [Usuario, Computador],
+    include: [Usuario, Computador]
   });
 };

@@ -47,9 +47,6 @@ const liberarComputadoresDeUsuario = async (usuarioId: number) => {
   const asignaciones = await Asignacion.findAll({ where: { usuarioId } });
   const computadorIds = asignaciones.map(a => a.computadorId);
   if (computadorIds.length > 0) {
-    await Computador.update(
-      { disponible: true },
-      { where: { id: computadorIds } }
-    );
+    await Computador.update({ disponible: true }, { where: { id: computadorIds } });
   }
 };
