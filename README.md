@@ -32,7 +32,7 @@ Para ejecutar la aplicación, sigue estos pasos:
 
 8. Para ejecutar la aplicación:
     ```bash
-    npm start
+    npm run start
     ```
 
 9. Se está usando sequelize, al correr la aplicación se creara la base de datos con sus respectivas tablas y datos de pruebas por medio de los seed.
